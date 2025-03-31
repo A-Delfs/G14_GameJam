@@ -5,8 +5,7 @@ public class ScoringZone : MonoBehaviour
     public string acceptedMajor;         
     public AudioClip correctSound;       
     public AudioClip incorrectSound;
-    [SerializeField, Range(0f, 1f)] float audioVolume = 0.75f;
-
+    [SerializeField] float audioVolume = 0.5f;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
