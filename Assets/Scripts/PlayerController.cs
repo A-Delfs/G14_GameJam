@@ -8,20 +8,17 @@ public class PlayerController : MonoBehaviour
 
     [Header("Layer Masks")]
     [SerializeField] private LayerMask interactableMask;
-    [SerializeField] private LayerMask detectionMask; 
+    [SerializeField] private LayerMask detectionMask;
 
     [Header("Raycast")]
     [SerializeField] private Transform raycastOrigin;
 
     [Header("Emote")]
-    [SerializeField] private GameObject emote; 
+    [SerializeField] private GameObject emote;
 
     [Header("Tweakables")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float detectionDistance = 8f;
-
-    
-
 
     private Rigidbody2D rb;
     private Vector2 moveDirection;
@@ -30,8 +27,6 @@ public class PlayerController : MonoBehaviour
     private InteractableController currentInteractable;
     private InteractableController lastDetectedInteractable;
     private bool hasHiddenBefore = false;
-
-
 
     private string lastDirection = "right"; // default facing direction
 
@@ -60,13 +55,10 @@ public class PlayerController : MonoBehaviour
 
         if (!hasHiddenBefore)
             HandleInteractablePopup();
-        
-        Debug.DrawRay(raycastOrigin.position, moveDirection * detectionDistance, Color.yellow);
 
+        Debug.DrawRay(raycastOrigin.position, moveDirection * detectionDistance, Color.yellow);
     }
 
-    //Used Raycast to check for any TA object. 
-    //When triggered, the scared :o emote pops up to to prompt player to hide
     private void DetectTA()
     {
         if (raycastOrigin == null) return;
@@ -79,7 +71,6 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Raycast hit: " + hit.collider.name);
         }
-        Debug.DrawRay(origin, dir * detectionDistance, Color.yellow);
 
         bool sawTA = false;
 
@@ -94,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
         emote.SetActive(sawTA);
     }
-    //Draw the raycast line for debug
+
     private void OnDrawGizmosSelected()
     {
         if (raycastOrigin != null)
@@ -105,10 +96,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    //Handles the appropriate anims for the player depedning on their state
     private void HandleMoveInput(Vector2 input)
     {
+        if (isHiding || animator == null || !animator.gameObject.activeInHierarchy) return;
+
         moveDirection = input.normalized;
 
         bool isWalking = Mathf.Abs(moveDirection.x) > 0;
@@ -125,7 +116,9 @@ public class PlayerController : MonoBehaviour
 
     private void HandleLeftInput(bool isPressed)
     {
-        if (isPressed && !isHiding)
+        if (isHiding || animator == null || !animator.gameObject.activeInHierarchy) return;
+
+        if (isPressed)
         {
             animator.Play("mc_walkleft");
             lastDirection = "left";
@@ -134,14 +127,15 @@ public class PlayerController : MonoBehaviour
 
     private void HandleRightInput(bool isPressed)
     {
-        if (isPressed && !isHiding)
+        if (isHiding || animator == null || !animator.gameObject.activeInHierarchy) return;
+
+        if (isPressed)
         {
             animator.Play("mc_walkright");
             lastDirection = "right";
         }
     }
 
-    //Handles the hiding mechanic, when the player presses spacebar, they can hide in a classroom or locker
     private void Interact()
     {
         if (isHiding)
@@ -159,23 +153,14 @@ public class PlayerController : MonoBehaviour
 
         if (hit.collider != null)
         {
-            Debug.Log("Hit: " + hit.collider.name);
             var interactable = hit.collider.GetComponent<InteractableController>();
             if (interactable != null)
             {
                 interactable.Interact(this);
             }
-            else
-            {
-                Debug.Log("Hit something, but not interactable: " + hit.collider.name);
-            }
-        }
-        else
-        {
-            Debug.Log("No interactable in direction: " + dir);
         }
     }
-    //Spacebar popup when player is near door or locker
+
     private void HandleInteractablePopup()
     {
         Vector2 origin = transform.position;
@@ -202,8 +187,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
-    //Script to open the door/locker and show player hiding
     public void EnterHidingSpot(InteractableController interactable)
     {
         if (isHiding) return;
@@ -213,24 +196,22 @@ public class PlayerController : MonoBehaviour
         currentInteractable = interactable;
 
         interactable.ShowOpenedFrame();
-        Invoke(nameof(HideInside), 0.1f); // Small delay for open frame
+        Invoke(nameof(HideInside), 0.1f);
+
         if (!hasHiddenBefore)
         {
             hasHiddenBefore = true;
-            currentInteractable.HidePopup(); // Disable popup after first hide
+            currentInteractable.HidePopup();
         }
-
     }
 
-    //Show the player hiding in room/locker
     private void HideInside()
     {
         currentInteractable.ShowHidingSprite();
         transform.position = currentInteractable.hidePoint.position;
-        gameObject.SetActive(false);
+        gameObject.SetActive(false); // triggers inactive animator bug if not guarded elsewhere
     }
 
-    //Exit the hiding spot 
     public void ExitHidingSpot()
     {
         if (!isHiding || currentInteractable == null) return;
@@ -241,10 +222,9 @@ public class PlayerController : MonoBehaviour
         transform.position = lastPositionBeforeHide;
         gameObject.SetActive(true);
 
-        Invoke(nameof(CloseAfterExit), 0.1f); // Show open frame briefly
+        Invoke(nameof(CloseAfterExit), 0.1f);
     }
 
-    //Close the door and return to normal sprite
     private void CloseAfterExit()
     {
         currentInteractable.ShowClosed();
