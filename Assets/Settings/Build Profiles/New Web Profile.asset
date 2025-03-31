@@ -24,7 +24,7 @@ MonoBehaviour:
     m_path: Assets/Scenes/main_menu.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Options.unity
-  - m_enabled: 1
+  - m_enabled: 0
     m_path: Assets/Scenes/AvoidTheTA.unity
   - m_enabled: 1
     m_path: Assets/Scenes/SortingMinigame.unity
