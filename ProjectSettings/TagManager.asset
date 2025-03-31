@@ -9,6 +9,9 @@ TagManager:
   - Eng Major
   - FadeUI
   - LevelText
+  - ccGoal
+  - ccPlayer
+  - ccSpawn
   layers:
   - Default
   - TransparentFX
