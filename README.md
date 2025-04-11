@@ -29,7 +29,29 @@
     - https://github.com/A-Delfs/G14_GameJam/pull/1
     - https://github.com/A-Delfs/G14_GameJam/pull/6/commits/52b246c758a26a14a5db90c37717e53877a7241a
     - https://github.com/A-Delfs/G14_GameJam/pull/6/commits/fef2b72e3baa6513d17c0caa22deed3be66530a7
+
+
+**Adam Delfs (43151877)**
+
+- Designed the major sorter minigame whch includes:
+  - Students counter
+  - highlights paths based on player input 
+  - success and fail sound effects 
+  - camera shake on fail
+  - random spanwing both in regards to location and major
+  - collision prevention 
+  - spawn rate and speed fields for scaling difficulty 
+  - buildings based on UBCO campus
+
+---
+   **pr with relevant commits**
+   - https://github.com/A-Delfs/G14_GameJam/pull/2/commits
+ 
+  **polishing commit**
+   - https://github.com/A-Delfs/G14_GameJam/pull/6/commits/0fbaaf165ccc50ab21b95ec9cdfd69066c388407
     
+    
+
    
 
 
