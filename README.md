@@ -24,7 +24,7 @@
     - **Play Again**: replaying the games, making sure that everything is reset 
     - **Quit**: Quit the application
    
-   ** commits and pulls**
+   **commits and pulls**
     
     - https://github.com/A-Delfs/G14_GameJam/pull/1
     - https://github.com/A-Delfs/G14_GameJam/pull/6/commits/52b246c758a26a14a5db90c37717e53877a7241a
