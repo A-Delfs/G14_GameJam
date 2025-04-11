@@ -26,6 +26,8 @@
    
     commits
     https://github.com/A-Delfs/G14_GameJam/pull/1
+    https://github.com/A-Delfs/G14_GameJam/pull/6/commits/52b246c758a26a14a5db90c37717e53877a7241a
+    https://github.com/A-Delfs/G14_GameJam/pull/6/commits/fef2b72e3baa6513d17c0caa22deed3be66530a7
     
    
 
