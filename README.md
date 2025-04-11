@@ -6,7 +6,9 @@
 
 
 **Feature Contribution  for this game jam are as follows:**
-(Immanuel wiessler)
+
+
+**(Immanuel wiessler)**
 - Making the UI system (looks and feel of the game for main menu, GameOver screen, health and level)
 - Making the Game Manager, which is responsible for:
   - Scene transitions
