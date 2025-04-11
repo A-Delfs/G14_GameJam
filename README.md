@@ -60,11 +60,11 @@
   - Spawning TAs based on the level
   - Adding smooth camera movement based on the location of the player
  
-** PRs and Branches With Relevant Commits: **
+**PRs and Branches With Relevant Commits:**
 https://github.com/A-Delfs/G14_GameJam/pull/5
 https://github.com/A-Delfs/G14_GameJam/tree/tim-minigame
 
-** Video Demo ** 
+**Video Demo** 
 https://github.com/user-attachments/assets/cb26639d-c5e3-40c0-bd8d-64782c004353
 
 
