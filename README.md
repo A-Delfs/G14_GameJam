@@ -5,10 +5,10 @@
 
 
 
-**Feature Contribution  for this game jam are as follows:**
+**Feature Contribution  for this game jam for each team member is as follows:**
 
 
-**(Immanuel wiessler)**
+**(Immanuel wiessler_20803375)**
 - Making the UI system (looks and feel of the game for main menu, GameOver screen, health and level)
 - Making the Game Manager, which is responsible for:
   - Scene transitions
@@ -24,10 +24,11 @@
     - **Play Again**: replaying the games, making sure that everything is reset 
     - **Quit**: Quit the application
    
-    commits
-    https://github.com/A-Delfs/G14_GameJam/pull/1
-    https://github.com/A-Delfs/G14_GameJam/pull/6/commits/52b246c758a26a14a5db90c37717e53877a7241a
-    https://github.com/A-Delfs/G14_GameJam/pull/6/commits/fef2b72e3baa6513d17c0caa22deed3be66530a7
+   ** commits and pulls**
+    
+    - https://github.com/A-Delfs/G14_GameJam/pull/1
+    - https://github.com/A-Delfs/G14_GameJam/pull/6/commits/52b246c758a26a14a5db90c37717e53877a7241a
+    - https://github.com/A-Delfs/G14_GameJam/pull/6/commits/fef2b72e3baa6513d17c0caa22deed3be66530a7
     
    
 
