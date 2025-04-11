@@ -50,7 +50,23 @@
   **polishing commit**
    - https://github.com/A-Delfs/G14_GameJam/pull/6/commits/0fbaaf165ccc50ab21b95ec9cdfd69066c388407
     
-    
+**Timothy Thio (88723952)**
+
+- Created and designed the Avoid the TA minigame:
+  - Pixel art assets with Aseprite
+  - The TA detection mechanic using Raycasts
+  - The Hiding mechanic so that students don't get caught by the TA
+  - The walking, hiding, and caught animations
+  - Spawning TAs based on the level
+  - Adding smooth camera movement based on the location of the player
+ 
+** PRs and Branches With Relevant Commits: **
+https://github.com/A-Delfs/G14_GameJam/pull/5
+https://github.com/A-Delfs/G14_GameJam/tree/tim-minigame
+
+** Video Demo ** 
+https://github.com/user-attachments/assets/cb26639d-c5e3-40c0-bd8d-64782c004353
+
 
    
 
