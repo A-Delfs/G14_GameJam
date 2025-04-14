@@ -62,6 +62,10 @@
     - **Play Again**: replaying the games, making sure that everything is reset 
     - **Quit**: Quit the application
    
+- The creation of settings pages
+  - Allows you to set the game to be fullscreen
+  - adjust the in-game volume
+   
    **commits and pulls**
     
     - https://github.com/A-Delfs/G14_GameJam/pull/1
